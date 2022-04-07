@@ -1,0 +1,6 @@
+matplotlib
+wget
+altair
+seaborn
+pandas
+Pillow
