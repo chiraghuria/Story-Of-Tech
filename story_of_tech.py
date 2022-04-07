@@ -14,6 +14,7 @@ import altair as alt
 import streamlit as st
 import urllib.request
 from PIL import Image
+import wget
 
 
 # # Using Data to Tell Stories
@@ -123,7 +124,12 @@ YouTubeVideo('hVimVzgtD6w', start=194, end=302, width=900, height=500)
 # ##### Data Understanding
 
 # In[3]:
+import os.path
+if not os.path.exists("survey_results_public.csv"):
+  data = wget.download("https://akshaybl.blob.core.windows.net/tutorial/survey_results_public.csv")
 
+if not os.path.exists("survey_results_schema.csv"):
+  schema = wget.download("https://akshaybl.blob.core.windows.net/tutorial/survey_results_schema.csv")
 
 df = pd.read_csv('survey_results_public.csv')
 
